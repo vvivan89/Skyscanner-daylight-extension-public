@@ -25,3 +25,7 @@ Therefore, for several days in March and October (depending on how close the cal
 the extension could show sunrise and sunset with 1 hour error.
 
 ### [Get it here](https://chrome.google.com/webstore/detail/skyscanner-daylight-hours/cgnecdkffjnlogglladkogeabgklaild?hl=en&authuser=0)
+
+### Credits
+* @mourner - great sunrise/sunset calculation [library](https://github.com/mourner/suncalc)
+* @dereke - airport time zone [offsets](https://github.com/dereke/airport-timezone)
