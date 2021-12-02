@@ -107,6 +107,13 @@ function getFullDate(time, date,am){
     let hrs=0
     let min=0
 
+    //if time includes + symbol (meaning arrival is not the same day as departure)
+    //we remove averything after and including  from time but add that number to date
+    if(time.includes("+")){
+        addDays=Number(time.substr(time.length-2,1)) ||0
+        time = time.substring(0,time.length-2)
+    }
+
     //depending on the language, hours and minutes can be divided with ":", "." or other symbol
     const possibleDelimiters=[":","."]
     const delimiter=possibleDelimiters.filter(item=>time.includes(item))[0] || possibleDelimiters[0]
@@ -133,10 +140,7 @@ function getFullDate(time, date,am){
         hrs=t[0]
         min=t[1]
     }
-    //add days if flight arrives the next day (can be more than one)
-    if(time.includes("+")){
-        addDays=Number(time.substr(time.length-2,1)) ||0
-    }
+
     return new Date(date.getFullYear(),date.getMonth(), date.getDate()+addDays,hrs, min)
 }
 
